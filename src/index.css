@@ -1,16 +1,163 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-body {
+:root{
+  --color-primary: #199bce;
+  --color-secudary: #83b9ce;
+  --color-tertiary: #edeffc;
+}
+
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   color: #fff;
-  background-color: #111;
+  background-image: linear-gradient(to bottom, var(--color-primary), var(--color-secudary));
+  height: 100vh;
 }
 
 .app {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.app h1{
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+/* componente climate form */
+
+#climateForm{
+  width: 100%;
+  border-radius: 5px;  
+}
+
+.input{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-tertiary);
+  border-radius: 5px;
+}
+
+.input div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon{
+  width: 15px;
+  margin-left: 10px;
+  opacity: 0.6;
+}
+
+.input button, .input input{
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  background-color: var(--color-tertiary);
+}
+
+.input input{
+  width: 100%;
+}
+
+.input button{
+  width: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input button:hover{
+  transition: width .5s;
+  width: 100px;
+  color: white;
+  background-color: var(--color-primary);
+}
+
+/* componente Weather Information*/
+.weather-information{
+  width: 100%;
+}
+
+.card{
+  margin-top: 15px;
+  padding: 20px;
+  background-color: #ffffff10;
+  border-radius: 10px;
+  border: 2px solid #ffffff50;
+}
+
+.card .info-1{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card img{
+  width: 100px;
+}
+
+.card .info-1 div{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.temp{
+  font-size: 3rem;
+}
+
+.weatherDescription{
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.card .info-2{
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.card .info-3{
+  display: flex;
+  margin-top: 20px;
+}
+
+.card .info-3 div {
+  width: 50%;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wind-icon, .humidity-icon, .localization-icon{
+  width: 16px;
+  margin-right: 10px;
+  opacity: .7;
+}
+
+.error-city{
+  text-align: center;
+  padding: 20px;
+  margin-top: 15px;
+  background-color: #ffffff10;
+  border-radius: 5px;
+  border: 2px solid #ffffff50;
 }

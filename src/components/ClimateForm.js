@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { handleChange, cityInformation } from "../actions/climateSlice";
 
+import SearchIcon from "../assets/svg/SearchIcon";
+
 const ClimateForm = () => {
   const city = useSelector((state) => state.climate.valueNameCity);
   const dispatch = useDispatch();
@@ -35,7 +37,6 @@ const ClimateForm = () => {
     };
 
     dispatch(cityInformation(cityWeatherInformation));
-    console.log(cityWeatherInformation);
   };
 
   //converter nome da cidade em coordenadas
@@ -52,16 +53,25 @@ const ClimateForm = () => {
   };
 
   return (
-    <form>
-      <input type="text" onChange={(event) => onHandleChange(event)}></input>
-      <button
-        onClick={(event) => {
-          event.preventDefault();
-          onGeoConditioningAPI(city);
-        }}
-      >
-        Buscar
-      </button>
+    <form id="climateForm">
+      <div className="input">
+        <div>
+          <SearchIcon className="search-icon" />
+          <input
+            type="text"
+            placeholder="Buscar cidade"
+            onChange={(event) => onHandleChange(event)}
+          ></input>
+        </div>
+        <button
+          onClick={(event) => {
+            event.preventDefault();
+            onGeoConditioningAPI(city);
+          }}
+        >
+          Buscar
+        </button>
+      </div>
     </form>
   );
 };
