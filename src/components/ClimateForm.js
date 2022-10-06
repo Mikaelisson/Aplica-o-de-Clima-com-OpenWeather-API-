@@ -33,7 +33,7 @@ const ClimateForm = () => {
       weatherDescription: data.weather[0].description,
       wind: JSON.stringify((data.wind.speed * 3600) / 1000).split(".")[0], //converte m/s em m/h em km/h
       humidity: data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`,
+      icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`,
     };
 
     dispatch(cityInformation(cityWeatherInformation));
@@ -42,7 +42,7 @@ const ClimateForm = () => {
   //converter nome da cidade em coordenadas
   const onGeoConditioningAPI = async (city) => {
     await fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${key}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${key}`
     )
       .then(async (res) => {
         return await res.json();
