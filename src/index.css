@@ -95,6 +95,8 @@ body {
 }
 
 .card{
+  max-width: 300px;
+  margin: 0 auto;
   margin-top: 15px;
   padding: 20px;
   background-color: #ffffff10;
@@ -110,7 +112,7 @@ body {
 }
 
 .card img{
-  width: 100px;
+  width: 80px;
 }
 
 .card .info-1 div{
@@ -120,16 +122,16 @@ body {
 }
 
 .temp{
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 
 .weatherDescription{
-  font-size: 1rem;
+  font-size: .8rem;
   text-transform: capitalize;
 }
 
 .card .info-2{
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   text-align: center;
   margin: 10px 0;
 }
@@ -141,14 +143,14 @@ body {
 
 .card .info-3 div {
   width: 50%;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .wind-icon, .humidity-icon, .localization-icon{
-  width: 16px;
+  width: 12px;
   margin-right: 10px;
   opacity: .7;
 }
